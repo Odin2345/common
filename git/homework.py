@@ -86,8 +86,6 @@ def multiple_ints_with_conversion(first_value: Any, second_value: Any) -> int:
         return int(first_value) * int(second_value)
     except TypeError:
         raise ValueError("Not valid input data")
-        print("Not valid input data")
-
 
 
 def is_word_in_text(word: str, text: str) -> bool:
@@ -113,10 +111,7 @@ def some_loop_exercise() -> list:
     """
     Use loop to create list that contain int values from 0 to 12 except 6 and 7
     """
-    list = [i for i in range(13)]
-    list.remove(6)
-    list.remove(7)
-    return list
+    return list(filter(lambda i: i not in [7, 8], [i for i in range(13)]))
 
 
 def remove_from_list_all_negative_numbers(data: List[int]) -> list:
@@ -128,14 +123,15 @@ def remove_from_list_all_negative_numbers(data: List[int]) -> list:
         remove_from_list_all_negative_numbers([1, 5, -7, 8, -1])
         >>> [1, 5, 8]
     """
-    positNum = [i for i in data if i >= 0]
-    return positNum
+    return [i for i in data if i >= 0]
 
 
 def alphabet() -> dict:
     """
-    Create dict which keys is alphabetic characters. And values their number in alphabet
-    Notes You could see an implementaion of this one in test, but create another one
+    Create dict which keys is alphabetic characters.
+    And values their number in alphabet
+    Notes You could see an implementaion of this one in test,
+    but create another one
     Examples:
         alphabet()
         >>> {"a": 1, "b": 2 ...}
