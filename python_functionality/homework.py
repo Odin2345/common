@@ -30,11 +30,10 @@ def task_2_remove_dict_fields(data: DT, redundant_keys: List[str]) -> DT:
        {'name': 'denys', 'age': 89}], 'age')
         >>> [{'name': 'Alex'}, {'name': 'denys'}]
     """
-    for i in range(len(data)):
-        for key in set(data[i]):
-            for j in range(len(redundant_keys)):
-                if key == redundant_keys[j]:
-                    del data[i][key]
+    for record in data:
+        for key in redundant_keys:
+            if key in record:
+                del record[key]
     return data
 
 
@@ -73,9 +72,9 @@ def task_6_min_value_list_of_dicts(data: DT, key: str) -> ST:
 
     """
     lst = []
-    for i in range(len(data)):
-        if key in data[i]:
-            lst.append(data[i][key])
+    for record in range(len(data)):
+        if key in data[record]:
+            lst.append(data[record][key])
     return (task_3_find_item_via_value(data, min(lst))[0])
 
 
@@ -106,7 +105,7 @@ def task_9_sum_characters_positions(text: str) -> int:
         >>> 532
 
     """
-    return sum(ord(s) for s in text)
+    return sum(ord(string) for string in text)
 
 
 def task_10_generator_of_simple_numbers() -> Generator[int, None, None]:
@@ -121,8 +120,8 @@ def task_10_generator_of_simple_numbers() -> Generator[int, None, None]:
         >>> 3
     """
     for num in range(2, 201):
-        d = 2
-        while num % d != 0:
-            d += 1
-        if d == num:
+        divider = 2
+        while num % divider != 0:
+            divider += 1
+        if divider == num:
             yield num
