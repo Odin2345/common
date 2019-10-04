@@ -30,11 +30,12 @@ def task_2_remove_dict_fields(data: DT, redundant_keys: List[str]) -> DT:
        {'name': 'denys', 'age': 89}], 'age')
         >>> [{'name': 'Alex'}, {'name': 'denys'}]
     """
-    for record in data:
+    new_data = []
+    for dict_instance in data:
         for key in redundant_keys:
-            if key in record:
-                del record[key]
-    return data
+            if key not in dict_instance.keys():
+                new_data += dict_instance
+    return new_data
 
 
 def task_3_find_item_via_value(data: DT, value) -> DT:
@@ -45,10 +46,9 @@ def task_3_find_item_via_value(data: DT, value) -> DT:
         {'name': 'denys', 'age': 89}], 26)
         >>> [{'name': 'Alex', 'age': 26}]
     """
-    for dictin in data:
-        for key in dictin.values():
-            if key == value:
-                return [dictin]
+    for dict_instance in data:
+        if value in dict_instance.values():
+            return [dict_instance]
 
 
 def task_4_min_value_integers(data: List[int]) -> int:
