@@ -1,0 +1,20 @@
+body {
+    background: url('../img/background.jpg');
+    overflow: hidden;
+}
+footer {
+    width: 100%;
+    text-align: center;
+    background-color: rgb(56, 60, 66);
+    position: absolute;
+    bottom: 0px;
+}
+.container {
+    width: 15%;
+    height: 120px;
+    vertical-align: center;
+    font-size: 250%;
+}
+a {
+    color: rgb(152, 154, 157);
+}
