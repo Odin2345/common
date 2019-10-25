@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}
+<title>Fruits</title>
+{% endblock %}
+
+{% block info %}
+<div class="d-flex flex-row justify-content-center align-items-center">
+    <ul>
+        {% for fruit in list_fruits %}
+            {% if fruit == "strawberry" %}
+                <li style="color:red;">{{fruit}}</li>
+            {% else %}
+                <li>{{fruit}}</li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
