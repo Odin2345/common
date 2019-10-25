@@ -1,5 +1,13 @@
 {% extends "base.html" %}
+{% block title %}
+<title>Home</title>
+{% endblock %}
+
 {% block info %}
-<h1 align="center"><a href="fruits">Fruits</a></h1>
-<h1 align="center"><a href="vegetables">Vegetables</a></h1>
+<div class="d-flex flex-row justify-content-center align-items-center" style="height: 300px;">
+    <div class="btn-group-vertical">
+        <a href="/fruits" class="btn btn-primary">Fruits</a>
+        <a href="/vegetables" class="btn btn-primary">Vegetables</a>
+    </div>
+</div>
 {% endblock %}

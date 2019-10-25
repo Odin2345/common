@@ -1,13 +1,18 @@
 {% extends "base.html" %}
+{% block title %}
+<title>Vegetables</title>
+{% endblock %}
+
 {% block info %}
-<h1>Vegetables:</h1>
-<ul>
-    {% for vegetable in list_vegetables %}
-    {% if vegetable == "beetroot" %}
-    <li>{{vegetable | upper}}</li>
-    {% else %}
-    <li>{{vegetable}}</li>
-    {% endif %}
-    {% endfor %}
-</ul>
+<div class="d-flex flex-row justify-content-center align-items-center" style="height: 300px;">
+    <ul>
+        {% for vegetable in list_vegetables %}
+        {% if vegetable == "beetroot" %}
+        <li>{{vegetable | upper}}</li>
+        {% else %}
+        <li>{{vegetable}}</li>
+        {% endif %}
+        {% endfor %}
+    </ul>
+</div>
 {% endblock %}

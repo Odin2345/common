@@ -1,13 +1,18 @@
 {% extends "base.html" %}
+{% block title %}
+<title>Fruits</title>
+{% endblock %}
+
 {% block info %}
-<h1>Fruits:</h1>
-<ul>
-    {% for fruit in list_fruits %}
-    {% if fruit == "strawberry" %}
-    <li style="color:red;">{{fruit}}</li>
-    {% else %}
-    <li>{{fruit}}</li>
-    {% endif %}
-    {% endfor %}
-</ul>
+<div class="d-flex flex-row justify-content-center align-items-center" style="height: 300px;">
+    <ul>
+        {% for fruit in list_fruits %}
+        {% if fruit == "strawberry" %}
+        <li style="color:red;">{{fruit}}</li>
+        {% else %}
+        <li>{{fruit}}</li>
+        {% endif %}
+        {% endfor %}
+    </ul>
+</div>
 {% endblock %}
