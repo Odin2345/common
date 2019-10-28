@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block info %}
+<div align="center">
+    <div class="card">
+        {% for elem in data %}
+        {% if elem['title'] == title %}
+        <img src="{{url_for('static', filename=elem['src_img'])}}" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{elem['title']}}</h5>
+            <p class="card-text">{{elem['text']}}</p>
+            <p class="count_of_words"> Count of words in text: {{elem['text'] | wordcount()}}</p>
+            <a href={{elem['wiki_url']}} class="btn btn-primary">See more...</a>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
