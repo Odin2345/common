@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}
+<title>Coffee maker</title>
+{% endblock %}
+
+{% block info %}
+<div align="center">
+    <div class="card">
+        <img src="{{url_for('static', filename='coffee_maker.jpeg')}}" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{data[4]['title']}}</h5>
+            <p class="card-text">{{data[4]['text']}}</p>
+            <p class="count_of_words"> Count of words in text: {{data[4].get('text') | wordcount()}}</p>
+            <a href="https://en.wikipedia.org/wiki/Coffeemaker" class="btn btn-primary">See more...</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

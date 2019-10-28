@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}
+<title>Battery charger</title>
+{% endblock %}
+
+{% block info %}
+<div align="center">
+    <div class="card">
+        <img src="{{url_for('static', filename='battery_charger.jpg')}}" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{data[5]['title']}}</h5>
+            <p class="card-text">{{data[5]['text']}}</p>
+            <p class="count_of_words"> Count of words in text: {{data[5].get('text') | wordcount()}}</p>
+            <a href="https://en.wikipedia.org/wiki/Battery_charger" class="btn btn-primary">See more...</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
