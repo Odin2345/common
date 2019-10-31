@@ -6,42 +6,24 @@ app = Flask(__name__)
 
 @app.route('/')
 def get_home_page():
-    return render_template("home.html", data=get_data(), title="Home")
+    return render_template("home.html", title="Home")
 
 
 @app.route('/author')
 def get_author_page():
-    return render_template("author.html", data=get_data(), title="Author")
+    return render_template("author.html", title="Author")
 
 
-@app.route('/alarm_clock')
-def get_alarm_clock_page():
-    return render_template("product.html", data=get_data(), title="Alarm clock")
-
-
-@app.route('/battery_charger')
-def get_battery_charger_page():
-    return render_template("product.html", data=get_data(), title="Battery charger")
-
-
-@app.route('/calculator')
-def get_calculator_page():
-    return render_template("product.html", data=get_data(), title="Calculator")
-
-
-@app.route('/coffee_maker')
-def get_coffee_maker_page():
-    return render_template("product.html", data=get_data(), title="Coffeemaker")
-
-
-@app.route('/headphones')
-def get_headphones_page():
-    return render_template("product.html", data=get_data(), title="Headphones")
-
-
-@app.route('/ipod')
-def get_ipod_page():
-    return render_template("product.html", data=get_data(), title="iPod")
+@app.route('/<product>')
+def get_product_page(product):
+    data = get_data()
+    for elem in data:
+        if product == elem['title'].replace(' ', '_').lower():
+            return render_template("product.html",
+                                   title=elem['title'],
+                                   src_img=elem['src_img'],
+                                   text=elem['text'],
+                                   wiki_url=elem['wiki_url'])
 
 
 if __name__ == "__main__":
