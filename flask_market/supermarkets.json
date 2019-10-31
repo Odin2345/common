@@ -1,0 +1,44 @@
+[
+  {
+    "id": "e3441caa-6e5e-434c-844d-04ea15fc31c6Terra",
+    "name": "Terra",
+    "location": "Dnipro",
+    "img_name": "0_terra.jpg"
+  },
+  {
+    "id": "e3441caa-6e5e-434c-844d-04ea15fc31c6Karavan",
+    "name": "Karavan",
+    "location": "Kharkiv",
+    "img_name": "1_karavan.jpg"
+  },
+  {
+    "id": "e3441caa-6e5e-434c-844d-04ea15fc31c6Auchan",
+    "name": "Auchan",
+    "location": "Kiev",
+    "img_name": "2_auchan.jpg"
+  },
+  {
+    "id": "e3441caa-6e5e-434c-844d-04ea15fc31c6SPAR",
+    "name": "SPAR",
+    "location": "Kharkiv",
+    "img_name": "3_spar.jpg"
+  },
+  {
+    "id": "e3441caa-6e5e-434c-844d-04ea15fc31c6Lidl",
+    "name": "Lidl",
+    "location": "Stocholm",
+    "img_name": "4_lidl.jpg"
+  },
+  {
+    "id": "e3441caa-6e5e-434c-844d-04ea15fc31c6Silpo",
+    "name": "Silpo",
+    "location": "Dnipro",
+    "img_name": "5_silpo.jpg"
+  },
+  {
+    "id": "e3441caa-6e5e-434c-844d-04ea15fc31c6Novus",
+    "name": "Novus",
+    "location": "Kiev",
+    "img_name": "6_novus.jpg"
+  }
+]

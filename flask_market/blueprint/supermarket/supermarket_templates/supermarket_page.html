@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<style>
+    .card {
+        height: 30vh;
+        width: 30vw;
+    }
+</style>
+<div align="center">
+    <div class="card">
+        <h1 class="card-title">{{title}}</h1>
+        <img src="{{url_for('supermarket.static', filename=src_img)}}" class="card-img-top"
+             alt="Image not found">
+        <div class="card-body">
+            <p class="card-text">{{location}}</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
