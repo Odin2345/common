@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-<a href="{{url_for('supermarket.add_supermarket')}}">
+<a href="{{url_for('supermarket.get_form_to_add_supermarket')}}">
     <h3>Add supermarket</h3>
 </a>
 
@@ -10,14 +10,11 @@
     <p>
         {{ form.location.label }}<br>
         {{ form.location(size=32) }}
-        {% for error in form.location.errors %}
-        <span style="color: red;">[{{ error }}]</span>
-        {% endfor %}
     </p>
     <p>{{ form.submit() }}</p>
 </form>
 
-<a href="{{url_for('supermarket.get_all_supermarkets', location='Kiev')}}">Supermarkets in Kiev</a>
+<a href="{{url_for('supermarket.get_all_supermarkets', location='Kyiv')}}">Supermarkets in Kyiv</a>
 
 {% for elem in data %}
 {% if not session.get(elem['id']) %}

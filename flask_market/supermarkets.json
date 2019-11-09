@@ -14,7 +14,7 @@
   {
     "id": "e3441caa-6e5e-434c-844d-04ea15fc31c6Auchan",
     "name": "Auchan",
-    "location": "Kiev",
+    "location": "Kyiv",
     "img_name": "2_auchan.jpg"
   },
   {
@@ -38,7 +38,7 @@
   {
     "id": "e3441caa-6e5e-434c-844d-04ea15fc31c6Novus",
     "name": "Novus",
-    "location": "Kiev",
+    "location": "Kyiv",
     "img_name": "6_novus.jpg"
   }
 ]
