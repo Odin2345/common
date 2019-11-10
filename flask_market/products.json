@@ -1,0 +1,51 @@
+[
+  {
+    "id": "410f328d-e981-4155-8f57-9816274fc2edBread",
+    "name": "Bread",
+    "description": "Bread is a staple food prepared from a dough of flour and water, usually by baking. Throughout recorded history it has been a prominent food in large parts of the world and is one of the oldest man-made foods, having been of significant importance since the dawn of agriculture.",
+    "img_name": "0_bread.jpg",
+    "price": "3.0"
+  },
+  {
+    "id": "410f328d-e981-4155-8f57-9816274fc2edMeatballs",
+    "name": "Meatballs",
+    "description": "A meatball is ground meat rolled into a small ball, sometimes along with other ingredients, such as bread crumbs, minced onion, eggs, butter, and seasoning. Meatballs are cooked by frying, baking, steaming, or braising in sauce. There are many types of meatballs using different types of meats and spices.",
+    "img_name": "1_meatballs.jpg",
+    "price": "7.0"
+  },
+  {
+    "id": "410f328d-e981-4155-8f57-9816274fc2edBanana",
+    "name": "Banana",
+    "description": "A banana is an edible fruit \u2013 botanically a berry \u2013 produced by several kinds of large herbaceous flowering plants in the genus Musa. In some countries, bananas used for cooking may be called 'plantains', distinguishing them from dessert bananas.",
+    "img_name": "2_banana.jpg",
+    "price": "2.5"
+  },
+  {
+    "id": "410f328d-e981-4155-8f57-9816274fc2edChocolate",
+    "name": "Chocolate",
+    "description": "Chocolate is a usually sweet, brown food preparation of roasted and ground cacao seeds that is made in the form of a liquid, paste, or in a block, or used as a flavoring ingredient in other foods. The earliest evidence of use traces to the Olmecs (modern day Mexico), with evidence of chocolate beverages dating to 1900 BC.",
+    "img_name": "3_chocolate.jpg",
+    "price": "0.99"
+  },
+  {
+    "id": "410f328d-e981-4155-8f57-9816274fc2edSpaghetti",
+    "name": "Spaghetti",
+    "description": "Spaghetti (Italian: [spa\u02c8\u0261etti]) is a long, thin, solid, cylindrical pasta. It is a staple food of traditional Italian cuisine. Like other pasta, spaghetti is made of milled wheat and water and sometimes enriched with vitamins and minerals. Italian spaghetti is typically made from durum wheat semolina.",
+    "img_name": "4_spaghetti.jpg",
+    "price": "4.2"
+  },
+  {
+    "id": "410f328d-e981-4155-8f57-9816274fc2edSalmon",
+    "name": "Salmon",
+    "description": "Salmon is the common name for several species of ray-finned fish in the family Salmonidae. Salmon are intensively farmed in many parts of the world. Typically, salmon are anadromous: they hatch in fresh water, migrate to the ocean, then return to fresh water to reproduce.",
+    "img_name": "5_salmon.jpg",
+    "price": "10.0"
+  },
+  {
+    "id": "410f328d-e981-4155-8f57-9816274fc2edShrimp",
+    "name": "Shrimp",
+    "description": "Shrimp are swimming crustaceans with long narrow muscular abdomens and long antennae. Unlike crabs and lobsters, shrimp have well developed pleopods (swimmerets) and slender walking legs; they are more adapted for swimming than walking.",
+    "img_name": "6_shrimp.jpg",
+    "price": "14.0"
+  }
+]

@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+<a href="{{url_for('supermarket.get_form_to_add_supermarket')}}">
+    <h3>Add supermarket</h3>
+</a>
+
+<form action="" method="post" novalidate enctype="multipart/form-data">
+
+    {{ form.hidden_tag() }}
+    <p>
+        {{ form.location.label }}<br>
+        {{ form.location(size=32) }}
+    </p>
+    <p>{{ form.submit() }}</p>
+</form>
+
+<a href="{{url_for('supermarket.get_all_supermarkets', location='Kyiv')}}">Supermarkets in Kyiv</a>
+
+{% for elem in data %}
+{% if not session.get(elem['id']) %}
+<li>
+    <h3>
+        <a href="{{url_for('supermarket.get_supermarket', id_market = elem['id'])}}">
+            {{ elem['name'] }}
+        </a>
+    </h3>
+</li>
+{% else %}
+<li>
+    <h3>
+        <a href="{{url_for('supermarket.get_supermarket', id_market = elem['id'])}}"
+           onclick="return false" style="color:grey;">
+            {{ elem['name'] }}
+        </a>
+    </h3>
+</li>
+{%endif%}
+{% endfor %}
+
+{% endblock %}

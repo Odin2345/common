@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block content %}
+<a href="{{url_for('products.get_form_to_add_product')}}">
+    <h3>Add product</h3>
+</a>
+
+<form action="" method="post" novalidate enctype="multipart/form-data">
+    {{ form.hidden_tag() }}
+    <p>
+        {{ form.price.label }}<br>
+        {{ form.price(size=32) }}
+    </p>
+    <p>{{ form.submit() }}</p>
+</form>
+
+<a href="{{url_for('products.get_all_products', price=14)}}">Goods which costs 14$</a>
+
+{% for elem in data %}
+{% if not session.get(elem['id']) %}
+<li>
+    <h3>
+        <a href="{{url_for('products.get_product', id_product = elem['id'])}}">
+            {{ elem['name'] }}
+        </a>
+    </h3>
+</li>
+{% else %}
+<li>
+    <h3>
+        <a href="{{url_for('products.get_product', id_product = elem['id'])}}"
+           onclick="return false" style="color:grey;">
+            {{ elem['name'] }}
+        </a>
+    </h3>
+</li>
+{%endif%}
+{% endfor %}
+
+{% endblock %}
