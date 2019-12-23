@@ -44,6 +44,7 @@ class StaffModel(db.Model):
                             secondary=staff_rooms,
                             backref='rooms')
 
+
 class UserModel(db.Model):
     __tablename__ = 'users'
 

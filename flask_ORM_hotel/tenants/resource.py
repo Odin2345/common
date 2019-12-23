@@ -1,5 +1,5 @@
 import json
-from flask import request
+from flask import request, Response
 from flask_restful import Resource, marshal_with
 
 from db import db
@@ -22,11 +22,36 @@ class Tenants(Resource):
 
     def post(self):
         data = json.loads(request.data)
-        new_tenant = TenantsModel(**data)
-        db.session.add(new_tenant)
-        db.session.commit()
-        return f"Successfully added a new tenant" \
-                   f" {new_tenant.name} ({new_tenant.passport_id})", 201
+        name = data.get('name')
+        passport_id = data.get('passport_id')
+        age = data.get('age')
+        sex = data.get('sex')
+        city = data.get('city')
+        address = data.get('address')
+
+        if None in [name, passport_id, age, sex, city, address]:
+            return Response("You must fill in the staff information:"
+                            " name, passport_id, age, sex, city, address",
+                            412)
+        try:
+            age = int(age)
+        except ValueError:
+            return Response("Age must be a number", 412)
+
+        if TenantsModel.query.get(passport_id):
+            return Response("This tenant is already exist", 412)
+
+        if len(passport_id) != 8:
+            return Response("Passport must contain 8 characters", 412)
+
+        if age > 0:
+            if sex in ['male', 'female']:
+                new_tenant = TenantsModel(**data)
+                db.session.add(new_tenant)
+                db.session.commit()
+                return Response(f"Tenant {name} was added {data}", 201)
+            return Response("Sex can be male or female", 412)
+        return Response("Age can't be negative", 412)
 
     def put(self, passport):
         data = json.loads(request.data)

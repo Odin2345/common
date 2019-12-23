@@ -1,5 +1,5 @@
 import json
-from flask import request
+from flask import request, Response
 from flask_restful import Resource, marshal_with
 
 from db import db
@@ -21,10 +21,35 @@ class Rooms(Resource):
 
     def post(self):
         data = json.loads(request.data)
-        new_room = RoomsModel(**data)
-        db.session.add(new_room)
-        db.session.commit()
-        return f"Successfully added a new room {new_room.number}", 201
+        number = data.get('number')
+        price = data.get('price')
+        level = data.get('level')
+        status = data.get('status')
+
+        if None in [number, level, status, price]:
+            return Response("You must fill in the room information:"
+                            " number, level, status, price", 412)
+        try:
+            number = int(data.get('number'))
+            price = int(data.get('price'))
+            level = int(data.get('level'))
+        except ValueError:
+            return Response("Room number, price and level"
+                            " must be a number", 412)
+
+        if RoomsModel.query.get(number):
+            return Response("This room is already exist", 412)
+
+        if number > 0:
+            if price > 0:
+                if status in ['Free', 'Tenanted']:
+                    new_room = RoomsModel(**data)
+                    db.session.add(new_room)
+                    db.session.commit()
+                    return Response(f"Room was added {data}", 201)
+                return Response("Status can be Free or Tenanted", 412)
+            return Response("Price can't be negative", 412)
+        return Response("Room number can't be negative", 412)
 
     def put(self, room_number):
         data = json.loads(request.data)
